@@ -4,9 +4,7 @@ Helper to convert [SPARQLWrapper](https://github.com/RDFLib/sparqlwrapper) resul
 
 [![Build Status](https://travis-ci.org/lawlesst/sparql-dataframe.svg?branch=master)](https://travis-ci.org/lawlesst/sparql-dataframe)
 
-See this [blog post](http://lawlesst.github.io/notebook/sparql-dataframe.html) for examples.
-
-You might also be interested in these related examples from [Su Labs tutorial](https://github.com/SuLab/sparql_to_pandas/blob/master/SPARQL_pandas.ipynb).
+See this [blog post](http://lawlesst.github.io/notebook/sparql-dataframe.html) for examples. You might also be interested in these related examples from [Su Labs tutorial](https://github.com/SuLab/sparql_to_pandas/blob/master/SPARQL_pandas.ipynb).
 
 ## Install
 
