@@ -29,6 +29,14 @@ import sparql_dataframe
 
 endpoint = "http://dbpedia.org/sparql"
 
+q = """
+    SELECT ?label ?wikiPageID
+    WHERE {
+    <http://dbpedia.org/resource/Baseball> rdfs:label ?label ;
+         <http://dbpedia.org/ontology/wikiPageID> ?wikiPageID
+    }
+"""
+
 df = sparql_dataframe.get(endpoint, q)
 ...
 ```
