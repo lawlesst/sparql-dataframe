@@ -6,9 +6,10 @@ def readme():
 
 setup(
     name='sparql_dataframe',
-    version='0.1',
+    version='0.2',
     description='Convert SPARQL results to Pandas dataframes',
     long_description=readme(),
+    long_description_content_type='text/markdown',
     url='https://github.com/lawlesst/sparql-dataframe',
     author='Ted Lawless',
     author_email='lawlesst@gmail.com',
