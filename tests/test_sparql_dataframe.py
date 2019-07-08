@@ -78,7 +78,7 @@ class TestWikiDataQuery(TestCase):
                 ORDER BY DESC (?birthdate)
                 LIMIT 10
         """
-        df = sparql_dataframe.get(self.endpoint, q)
+        df = sparql_dataframe.get(self.endpoint, q, post=True)
         self.assertEqual(df['year'].iloc[0], 1988)
 
     def test_get_multiple(self):
@@ -92,7 +92,7 @@ class TestWikiDataQuery(TestCase):
         }
         LIMIT 10
         """
-        df = sparql_dataframe.get(self.endpoint, q)
+        df = sparql_dataframe.get(self.endpoint, q, post=True)
         # Make sure we get 5 or more labels.
         self.assertTrue(len(df) == 10)
         # Both variables should be of equal length.
