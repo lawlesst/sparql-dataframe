@@ -59,6 +59,10 @@ class TestQuery(TestCase):
 
 
 class TestWikiDataQuery(TestCase):
+    """
+    Running the tests multiple times during a short time window will result
+    in Wikidata throttling errors. Therefore these tests are ignored by Travis.
+    """
 
     endpoint = 'https://query.wikidata.org/sparql'
     prefixes = """
