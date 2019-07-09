@@ -39,6 +39,12 @@ df = sparql_dataframe.get(endpoint, q)
 ...
 ```
 
+By default, the query will be passed to the server as a `GET` request. To pass the query to the server as a `POST` request, use the `post=True` keyword.
+
+```
+df = sparql_dataframe.get(endpoint, q, post=True)
+```
+
 ## Tests
 
 ```
