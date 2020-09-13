@@ -3,6 +3,7 @@ Query a SPARQL endpoint and return results as a Pandas dataframe.
 """
 
 import pandas as pd
+import io
 
 from SPARQLWrapper import SPARQLWrapper, CSV, SELECT, POST, POSTDIRECTLY
 
@@ -26,5 +27,5 @@ def get_sparql_dataframe(endpoint, query, post=False):
 
     sparql.setReturnFormat(CSV)
     results = sparql.query().convert()
-    _csv = pd.compat.StringIO(results.decode('utf-8'))
+    _csv = io.StringIO(results.decode('utf-8'))
     return pd.read_csv(_csv, sep=",")
