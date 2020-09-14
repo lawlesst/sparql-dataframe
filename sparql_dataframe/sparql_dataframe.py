@@ -1,6 +1,7 @@
 """
 Query a SPARQL endpoint and return results as a Pandas dataframe.
 """
+from io import StringIO
 
 import pandas as pd
 
@@ -26,5 +27,5 @@ def get_sparql_dataframe(endpoint, query, post=False):
 
     sparql.setReturnFormat(CSV)
     results = sparql.query().convert()
-    _csv = pd.compat.StringIO(results.decode('utf-8'))
+    _csv = StringIO(results.decode('utf-8'))
     return pd.read_csv(_csv, sep=",")
