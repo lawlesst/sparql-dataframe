@@ -5,6 +5,7 @@ Requires connecting to http://dbpedia.org/sparql.
 
 """
 
+import time
 from unittest import TestCase
 
 import sparql_dataframe
@@ -26,6 +27,7 @@ class TestQuery(TestCase):
         """
         df = sparql_dataframe.get(self.endpoint, q)
         self.assertEqual(df['wikiPageID'].iloc[0], 3850)
+        time.sleep(2)
 
     def test_get_multiple(self):
         q = """
@@ -41,6 +43,7 @@ class TestQuery(TestCase):
         self.assertTrue(len(df) > 5)
         # Both variables should be of equal length.
         self.assertEqual(len(df['label']), len(df['wikiPageID']))
+        time.sleep(2)
 
     def test_bad_query(self):
         with self.assertRaises(SPARQLWrapper.SPARQLExceptions.QueryBadFormed):
@@ -56,6 +59,7 @@ class TestQuery(TestCase):
         """
         with self.assertRaises(sparql_dataframe.QueryException):
             sparql_dataframe.get(self.endpoint, q)
+        time.sleep(2)
 
 
 class TestWikiDataQuery(TestCase):
@@ -85,6 +89,7 @@ class TestWikiDataQuery(TestCase):
         """
         df = sparql_dataframe.get(self.endpoint, q, post=True)
         self.assertEqual(df['year'].iloc[0], 1988)
+        time.sleep(2)
 
     def test_get_multiple(self):
         q = self.prefixes + """
@@ -102,6 +107,7 @@ class TestWikiDataQuery(TestCase):
         self.assertTrue(len(df) == 10)
         # Both variables should be of equal length.
         self.assertEqual(len(df['human']), len(df['humanLabel']))
+        time.sleep(2)
 
 
 if __name__ == '__main__':
