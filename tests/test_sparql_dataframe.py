@@ -75,6 +75,7 @@ class TestWikiDataQuery(TestCase):
         q = self.prefixes + """
                 SELECT ?astronaut ?astronautLabel ?birthdate (YEAR(?birthdate) as ?year) ?birthplace WHERE {
                   ?astronaut ?x1 wd:Q11631;
+                    wdt:P31 wd:Q5;
                     wdt:P569 ?birthdate;
                     wdt:P19 ?birthplace.
                   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
